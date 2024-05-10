@@ -1,0 +1,14 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block css %}
+     <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css"%}">
+{% endblock %}
+
+{% block content%}
+    <div class="mt-5 pt-5 bg-white custom-shadow rounded">
+     <h2 class="m-2"><strong>{{ context }}</strong></h2>
+    <p class="m-2">{{ text_on_page }}</p>
+    </div>
+
+{% endblock %}
