@@ -1,17 +1,20 @@
 from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render
+from goods.models import Categories
 
-def index(request):
+def index(request) -> HttpResponse:
+
+    categories = Categories.objects.all()
 
     context = {
         'title': 'Home - main',
-        'context': 'Furniture store HOME'
-
+        'context': 'Furniture store HOME',
+        'categories': categories
     }
 
     return render(request,'main/index.html', context)
 
-def about(request):
+def about(request) -> HttpResponse:
 
     context = {
         'title': 'Home - About as',
