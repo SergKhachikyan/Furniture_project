@@ -8,6 +8,7 @@ class Categories(models.Model):
         db_table: str = 'category'
         verbose_name: str = 'Категорию'
         verbose_name_plural: str = 'Категории'
+        ordering = ('id',)
 
     def __str__(self):
         return self.name
